@@ -6,6 +6,7 @@ import '../styles/home.css';
 const Home = () => {
 
   const [services, setServices] = useState([]);
+  
 
   useEffect(() => {
     fetch('../api/services.json')
