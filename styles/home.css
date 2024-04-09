@@ -1,0 +1,20 @@
+.progress-container{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+}
+
+.cuadro {
+    width: 900px;
+    height: 900px;
+    border: 1px solid rgb(177, 176, 176); /* Establece el borde del cuadro */
+    margin-top: 20px;
+    margin-right: 10px; 
+    margin-left: 10px; 
+    margin-bottom: 10px;
+}

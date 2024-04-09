@@ -1,0 +1,13 @@
+
+.cont-success{
+    background-color: rgb(7, 68, 7);
+    color: greenyellow;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+.cont-success > button{
+    margin-left: 5px;
+    text-align: center;
+}
