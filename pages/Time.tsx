@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Progress from "../components/progressBar";
 import Hours from "../components/hours";
 import { TimeslotResponse } from "../utils/types/types";
@@ -9,6 +9,14 @@ const Time = () => {
     serviceId: 0,
     availableTimeslots: [],
   });
+
+  const servicesLocal = localStorage.getItem("selectedServices");
+
+  useEffect(() => {
+    if(!servicesLocal){
+      window.location.href = '/';
+    }
+  }, [])
 
   useEffect(() => {
     fetch("../api/slots.json")

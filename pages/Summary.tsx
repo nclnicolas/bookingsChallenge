@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import Progress from "../components/progressBar";
 import Button from "react-bootstrap/Button";
 import { Service } from "../utils/types/types";
@@ -14,6 +14,12 @@ const Summary = () => {
 
   const hourLocal = localStorage.getItem("selectedHour");
   const date = localStorage.getItem("selectedDate");
+
+  useEffect(() => {
+    if(!hourLocal && !date){
+      window.location.href = '/time';
+    }
+  }, [])
 
   const handlePrev = () => {
     setPrev(true)

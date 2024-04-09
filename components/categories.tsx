@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
@@ -9,6 +9,14 @@ import { ServicesData, Service } from "../utils/types/types";
 const Categories = ({ services }: { services: Array<ServicesData> }) => {
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const [redirectTime, setRedirectTime] = useState(false);
+
+  const servicesLocal = localStorage.getItem("selectedServices");
+
+  useEffect(() => {
+    if(servicesLocal){
+      setButtonDisabled(true);
+    }
+  }, [])
 
   const handleSelection = (service: Service) => {
     setButtonDisabled(true);

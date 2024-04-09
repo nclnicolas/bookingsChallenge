@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import { TimeslotResponse } from "../utils/types/types";
 import { formatDate } from "../utils/functions/functions";
 import "../styles/hours.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 
 const Hours = ({ slots }: { slots: TimeslotResponse }) => {
@@ -18,6 +18,17 @@ const Hours = ({ slots }: { slots: TimeslotResponse }) => {
   });
 
   const date = formatDate(slots.date);
+
+  const hourLocal = localStorage.getItem("selectedHour");
+  const dateLocal = localStorage.getItem("selectedDate");
+  console.log();
+  
+
+  useEffect(() => {
+    if(hourLocal && dateLocal){
+      setDissabled(false); 
+    }
+  }, [])
 
   const handleHourSelection = (hour: string) => {
     localStorage.setItem("selectedHour", JSON.stringify(hour));
