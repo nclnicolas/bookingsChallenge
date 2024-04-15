@@ -7,7 +7,6 @@ const Home = () => {
 
   const [services, setServices] = useState([]);
 
-
   useEffect(() => {
     fetch('../api/services.json')
       .then(response => response.json())
